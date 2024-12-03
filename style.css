@@ -1,0 +1,178 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  box-sizing: border-box;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:root {
+  --color-primary: hsl(0, 0%, 100%);
+  --color-secondary: hsl(216, 15%, 48%);
+  --color-background: hsl(212, 45%, 89%);
+  --color-tertiary: hsl(218, 44%, 22%);
+}
+
+/* Variables */
+.flex, body main .qr-code, body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-size: 0.9375rem;
+  font-family: "Outfit", sans-serif;
+  background-color: var(--color-background);
+  height: 100vh;
+  justify-content: center;
+  gap: 1rem;
+}
+body main .qr-code {
+  background-color: var(--color-primary);
+  border-radius: 1.75rem;
+  transition: box-shadow 0.3s ease;
+  padding: 1rem;
+  justify-content: space-between;
+  text-align: center;
+  max-width: 20rem;
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+body main .qr-code:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 121, 255, 0.6);
+}
+body main .qr-code img {
+  border-radius: 0.875rem;
+}
+body main .qr-code h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-tertiary);
+  margin: 1.25rem 0 1rem 0;
+}
+body main .qr-code p {
+  color: var(--color-secondary);
+  font-family: inherit;
+  margin: 0 1rem 1rem 1rem;
+  font-size: 0.9375rem;
+}
+body .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+body .attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+  .qr-code {
+    max-width: 60vw;
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 430px) {
+  .qr-code {
+    width: 60vw;
+  }
+  .qr-code h1 {
+    font-size: 0.7rem;
+  }
+  .qr-code p {
+    font-size: 0.5rem;
+  }
+}/*# sourceMappingURL=style.css.map */
